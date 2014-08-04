@@ -26,10 +26,10 @@ end
 get '/reply_sms' do
 	@number = params[:From][2..-1]
 	@call = CallLog.where('number=?', @number).last
-	@president = @call.president.name
+	@president_nickname = @call.president.nickname
 	@name = @call.name
   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message "It was good to hear from you my beloved #{@name}! By the way, you can call me #{@president}. XOXO"
+    r.Message "It was good to hear from you my beloved #{@name}! By the way, you can call me #{@president_nickname}. XOXO"
   end
   twiml.text
 end
