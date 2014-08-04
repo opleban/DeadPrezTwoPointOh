@@ -3,13 +3,6 @@
 # @number = nil
 
 
-get '/respond_to_sms' do
-  twiml = Twilio::TwiML::Response.new do |r|
-    r.Message "It was good to hear from you my beloved Ian! By the way, you can call me Tricky Dick. XOXO"
-  end
-  twiml.text
-end
-
 get '/' do
 	erb :index
 end
@@ -29,3 +22,18 @@ get '/confirmation' do
 	@recipient = params[:recipient]
 	erb :confirmation
 end
+
+get '/reply_sms' do
+	p params
+	# @number = #some shit here
+	# @call = CallLog.where('number=?' @number)
+	# @president = @call.president
+	# @name = @call.name
+end
+
+# get '/respond_to_sms' do
+#   twiml = Twilio::TwiML::Response.new do |r|
+#     r.Message "It was good to hear from you my beloved Ian! By the way, you can call me Tricky Dick. XOXO"
+#   end
+#   twiml.text
+# end
