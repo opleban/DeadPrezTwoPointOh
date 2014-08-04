@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>Welcome to Dead Presidents</h1>
+	<h2>E Pluribus Textus</h2>
+	<% if !Controller.valid_number?(@phone_number) %>
+		<p id="bogus_number"><%= @phone_number %> is bogus! Please enter a valid 10 digit (with area code) phone number.</p>
+		<a href='/'>Back</a>
+	<% else %>
+		<p id="send_sms">Your text will be sent to <%= @recipient %> at <%= @phone_number %>.</p>
+		<form action="/send_sms/<%= @recipient %>/<%= @phone_number %>" method="get">
+			<input type="Submit">
+		</form>
+	<% end %>
+</div>
