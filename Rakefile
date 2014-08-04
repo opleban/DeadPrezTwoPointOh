@@ -80,7 +80,6 @@ namespace :generate do
       EOF
     end
   end
-
 end
 
 namespace :db do
