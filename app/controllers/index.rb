@@ -24,7 +24,7 @@ get '/confirmation' do
 end
 
 get '/reply_sms' do
-	@number = params[:from][2..-1]
+	@number = params[:From][2..-1]
 	@call = CallLog.where('number=?', @number)
 	@president = @call.president.name
 	@name = @call.name
