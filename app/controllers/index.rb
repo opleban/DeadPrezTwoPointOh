@@ -24,11 +24,14 @@ get '/confirmation' do
 end
 
 get '/reply_sms' do
-	p params
-	# @number = #some shit here
-	# @call = CallLog.where('number=?' @number)
-	# @president = @call.president
-	# @name = @call.name
+	@number = params[:from][2..-1]
+	@call = CallLog.where('number=?' @number)
+	@president = @call.president.name
+	@name = @call.name
+  twiml = Twilio::TwiML::Response.new do |r|
+    r.Message "It was good to hear from you my beloved #{@name}! By the way, you can call me #{@president}. XOXO"
+  end
+  twiml.text
 end
 
 # get '/respond_to_sms' do
