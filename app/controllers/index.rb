@@ -25,7 +25,7 @@ end
 
 get '/reply_sms' do
 	@number = params[:From][2..-1]
-	@call = CallLog.where('number=?', @number)
+	@call = CallLog.where('number=?', @number).last
 	@president = @call.president.name
 	@name = @call.name
   twiml = Twilio::TwiML::Response.new do |r|
