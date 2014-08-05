@@ -1,11 +1,20 @@
 body{
 	font-family: Helvetica, Arial, sans-serif;
+	background-image: url("../pictures/presidential_seal.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .container{
 	position: relative;
 	margin: 40px auto;
 	width: 600px;
+	border: 2px solid black;
+	border-radius: 17px;
+	background-color: rgba(275, 275, 275, 0.7);
+	padding:20px;
+	text-align: center
 }
 
 #title {
