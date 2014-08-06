@@ -14,6 +14,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'twilio-ruby'
+gem 'unicorn'
 
 group :test do
   gem 'shoulda-matchers'
